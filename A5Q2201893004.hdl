@@ -1,0 +1,14 @@
+  CHIP A5Q2201893004 { 
+    IN B, X, S;
+    OUT C;
+    
+    PARTS:
+    NOT (in=X, out=NotX);
+    AND (a=NotX, b=B, out=And1);
+    AND (a=X, b=S, out=And2);
+    OR (a=And1, b=And2, out=Or1);
+    XOR (a=X, b=S, out=Xor1);
+    AND (a=Or1, b=Xor1, out=C);
+  }
+
+
